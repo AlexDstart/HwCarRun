@@ -17,4 +17,24 @@ public class Truck extends Transport{
         System.out.println(" Грузовик марки " + getBrand()+" закончил движение ");
 
     }
+    @Override
+    public void pitStop() {
+        System.out.println(" Пит-стоп у грузовика  ");
+    }
+
+    @Override
+    public void theBestCircleTime() {
+        int minBound=90;
+        int maxBound=140;
+        int theBestTimeInMins=(int) (minBound+(maxBound-minBound)*Math.random());
+        System.out.println(" Лучшее время круга у грузовика в минутах " + theBestTimeInMins);
+    }
+
+    @Override
+    public void maxSpeed() {
+        int minBound=90;
+        int maxBound=130;
+        int maxSpeed=(int) (minBound+(maxBound-minBound)*Math.random());
+        System.out.println(" Максимальная скорость  у грузовика  " + maxSpeed);
+    }
 }
