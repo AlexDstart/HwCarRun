@@ -1,7 +1,9 @@
 package Transport;
 
 public class Truck extends Transport<DriverC>{
-    public Truck(String brand, String model, double engineVolume, DriverC driver) {
+
+    public double truckCapacity1;
+    public Truck(String brand, String model, double engineVolume, DriverC driver,TruckCapacity truckCapacity1) {
         super(brand, model, engineVolume, driver);
     }
 
@@ -34,5 +36,8 @@ public class Truck extends Transport<DriverC>{
         int maxBound=130;
         int maxSpeed=(int) (minBound+(maxBound-minBound)*Math.random());
         System.out.println(" Максимальная скорость  у грузовика  " + maxSpeed);
+    }
+    public String toString() {
+        return ""+ getBrand()+getModel()+getEngineVolume()+getDriver().toString();
     }
 }

@@ -12,6 +12,10 @@ public abstract class Driver {
         this.hasDriverLicense = hasDriverLicense;
         this.experienceInYears = experienceInYears;
     }
+    @Override
+    public String toString() {
+        return ", водитель : " + name ;
+    }
 
     public String getName() {
         return name;

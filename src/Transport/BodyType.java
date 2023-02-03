@@ -10,10 +10,13 @@ public enum BodyType {
     PICKUP("Пикап"),
     VAN("Фургон"),
     MINIVAN("Минивэн");
+
+
     public   String nameCar;
     BodyType(String nameCar) {
         this.nameCar = nameCar;
     }
+
 
     public String getNameCar() {
         return nameCar;
@@ -27,4 +30,5 @@ public enum BodyType {
     public String toString() {
         return ", тип кузова :" + getNameCar();
     }
+
 }
