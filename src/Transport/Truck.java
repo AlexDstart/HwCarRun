@@ -40,4 +40,9 @@ public class Truck extends Transport<DriverC>{
     public String toString() {
         return ""+ getBrand()+getModel()+getEngineVolume()+getDriver().toString();
     }
+
+    public boolean passDiagnostic(){
+        return isDiagnosticPassed();
+
+    }
 }

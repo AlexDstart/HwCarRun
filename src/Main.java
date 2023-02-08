@@ -1,5 +1,6 @@
 import Transport.*;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -32,7 +33,7 @@ public class Main {
 
         double[] gravity = {35, 11, 1.6, 4};
         Truck[] trucks = new Truck[4];
-        trucks[0] = new Truck ("Камаз", "65801", 6.7, driversC[0], TruckCapacity.getValue(gravity[0]));
+        trucks[0] = new Truck("Камаз", "65801", 6.7, driversC[0], TruckCapacity.getValue(gravity[0]));
         trucks[1] = new Truck("МАЗ", "6501", 11.6, driversC[1], TruckCapacity.getValue(gravity[1]));
         trucks[2] = new Truck("ЗИЛ", "157", 5.0, driversC[2], TruckCapacity.getValue(gravity[2]));
         trucks[3] = new Truck("ГАЗ", "66", 4.3, driversC[3], TruckCapacity.getValue(gravity[3]));
@@ -44,12 +45,24 @@ public class Main {
         bus[2] = new Bus("КРАЗ", "103", 6.4, driversD[2]);
         bus[3] = new Bus("МАЗ", "3205", 4.25, driversD[3]);
 
+
         for (int i = 0; i < 4; i++) {
             printInfo(cars[i]);
             printInfo(trucks[i]);
+
+
+
         }
+        Car.isDiagnosticPassed();
+        Truck.isDiagnosticPassed();
+        Bus.isDiagnosticPassed();
+
+
+
 
     }
+
+
 
     private static void printInfo(Transport trasport) {
         System.out.println("Водитель " + trasport.getDriver().getName() +
@@ -58,6 +71,8 @@ public class Main {
                 trasport.getEngineVolume() + " и будет участвовать в заезде. ");
     }
 
+
+
     public static String printInfoTransport(Transport[] bus) {
         for (int i = 0; i < bus.length; i++) {
             System.out.println(bus[i]);
@@ -65,7 +80,13 @@ public class Main {
         return BodyType.SUV.toString();
 
     }
+
+
+
+
 }
+
+
 
 
 

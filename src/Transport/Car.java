@@ -49,4 +49,9 @@ public class Car extends Transport<DriverB> {
     public void setBodyType(String bodyType) {
         this.bodyType = bodyType;
     }
+
+    public boolean passDiagnostic(){
+        return isDiagnosticPassed();
+
+    }
 }
