@@ -3,7 +3,9 @@ import Transport.servicies.Mechanics;
 import Transport.servicies.ServiceStation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -124,7 +126,68 @@ public class Main {
         serviceStationForCar.doDiagnostic();
         serviceStationForTruck.doDiagnostic();
 
+        cars[0].setPerson(mechanic1);
+        cars[1].setPerson(mechanic2);
+        cars[2].setPerson(mechanic1);
+        cars[3].setPerson(mechanic3);
 
+
+        trucks[0].setPerson(mechanic2);
+        trucks[1].setPerson(mechanic5);
+        trucks[2].setPerson(mechanic3);
+        trucks[3].setPerson(mechanic3);
+
+
+        bus[0].setPerson(mechanic5);
+        bus[1].setPerson(mechanic5);
+        bus[2].setPerson(mechanic5);
+        bus[3].setPerson(mechanic5);
+
+
+        List<Mechanics> mechanicsOfCar1 = new ArrayList<>();
+        mechanicsOfCar1.add(mechanic1);
+        mechanicsOfCar1.add(mechanic2);
+        List<Mechanics> mechanicsOfCar2 = new ArrayList<>();
+        mechanicsOfCar2.add(mechanic1);
+        List<Mechanics> mechanicsOfCar3 = new ArrayList<>();
+        mechanicsOfCar3.add(mechanic3);
+        List<Mechanics> mechanicsOfCar4 = new ArrayList<>();
+        mechanicsOfCar4.add(mechanic4);
+        List<Mechanics> mechanicsOfTruck1 = new ArrayList<>();
+        mechanicsOfTruck1.add(mechanic2);
+        mechanicsOfTruck1.add(mechanic5);
+        List<Mechanics> mechanicsOfTruck2 = new ArrayList<>();
+        mechanicsOfTruck2.add(mechanic3);
+        List<Mechanics> mechanicsOfTruck3 = new ArrayList<>();
+        mechanicsOfTruck3.add(mechanic3);
+        List<Mechanics> mechanicsOfTruck4 = new ArrayList<>();
+        mechanicsOfTruck4.add(mechanic4);
+        List<Mechanics> mechanicsOfBus1 = new ArrayList<>();
+        mechanicsOfBus1.add(mechanic5);
+        List<Mechanics> mechanicsOfBus2 = new ArrayList<>();
+        mechanicsOfBus2.add(mechanic5);
+        List<Mechanics> mechanicsOfBus3 = new ArrayList<>();
+        mechanicsOfBus3.add(mechanic5);
+        List<Mechanics> mechanicsOfBus4 = new ArrayList<>();
+        mechanicsOfBus4.add(mechanic5);
+        Map<Transport, List<Mechanics>> transportAndMechanics = new HashMap<>();
+        transportAndMechanics.put(cars[0], mechanicsOfCar1);
+        transportAndMechanics.put(cars[1], mechanicsOfCar2);
+        transportAndMechanics.put(cars[2], mechanicsOfCar3);
+        transportAndMechanics.put(cars[3], mechanicsOfCar4);
+        transportAndMechanics.put(trucks[0], mechanicsOfTruck1);
+        transportAndMechanics.put(trucks[1], mechanicsOfTruck2);
+        transportAndMechanics.put(trucks[2], mechanicsOfTruck3);
+        transportAndMechanics.put(trucks[3], mechanicsOfTruck4);
+        transportAndMechanics.put(bus[0], mechanicsOfBus1);
+        transportAndMechanics.put(bus[1], mechanicsOfBus2);
+        transportAndMechanics.put(bus[2], mechanicsOfBus3);
+        transportAndMechanics.put(bus[3], mechanicsOfBus4);
+
+        for (Map.Entry<Transport, List<Mechanics>> vehicle :
+                transportAndMechanics.entrySet()) {
+            System.out.println("Автомобиль " + vehicle.getKey() + " - Механик(и) " + vehicle.getValue());
+        }
 
 
 
