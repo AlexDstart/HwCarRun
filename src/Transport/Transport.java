@@ -53,12 +53,9 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void starMove();
     public abstract void finishMove();
 
-    public static boolean isDiagnosticPassed(){
-        System.out.println("Пройти диагностику");
-        return false;
-    }
+    public abstract boolean isDiagnosticPassed();
 
-    public abstract boolean passDiagnostic();
+    public abstract boolean passDiagnostics()throws TransportTypeException;
 
 
 

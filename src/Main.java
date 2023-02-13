@@ -49,20 +49,9 @@ public class Main {
         for (int i = 0; i < 4; i++) {
             printInfo(cars[i]);
             printInfo(trucks[i]);
-
-
-
         }
-        Car.isDiagnosticPassed();
-        Truck.isDiagnosticPassed();
-        Bus.isDiagnosticPassed();
-
-
-
 
     }
-
-
 
     private static void printInfo(Transport trasport) {
         System.out.println("Водитель " + trasport.getDriver().getName() +
@@ -71,8 +60,6 @@ public class Main {
                 trasport.getEngineVolume() + " и будет участвовать в заезде. ");
     }
 
-
-
     public static String printInfoTransport(Transport[] bus) {
         for (int i = 0; i < bus.length; i++) {
             System.out.println(bus[i]);
@@ -80,13 +67,14 @@ public class Main {
         return BodyType.SUV.toString();
 
     }
-
-
-
+    public static void checkTransport(Transport... transports) {
+        for (Transport transport : transports) {
+            try {
+                transport.passDiagnostics();
+            } catch (TransportTypeException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
-
-
-
-
-

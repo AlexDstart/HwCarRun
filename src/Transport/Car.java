@@ -23,6 +23,17 @@ public class Car extends Transport<DriverB> {
     }
 
     @Override
+    public boolean isDiagnosticPassed() {
+        return false;
+    }
+
+    @Override
+    public boolean passDiagnostics() {
+        System.out.println("Легковой автомобиль "+ getBrand() +", "+getModel()+" прошел диагностику");
+        return true;
+    }
+
+    @Override
     public void pitStop() {
         System.out.println(" Пит-стоп у автомобиля  ");
     }
@@ -50,8 +61,5 @@ public class Car extends Transport<DriverB> {
         this.bodyType = bodyType;
     }
 
-    public boolean passDiagnostic(){
-        return isDiagnosticPassed();
 
-    }
 }

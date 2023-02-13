@@ -17,6 +17,12 @@ public class Truck extends Transport<DriverC>{
         System.out.println(" Грузовик марки " + getBrand()+" закончил движение ");
 
     }
+
+    @Override
+    public boolean isDiagnosticPassed() {
+        return false;
+    }
+
     @Override
     public void pitStop() {
         System.out.println(" Пит-стоп у грузовика  ");
@@ -41,8 +47,9 @@ public class Truck extends Transport<DriverC>{
         return ""+ getBrand()+getModel()+getEngineVolume()+getDriver().toString();
     }
 
-    public boolean passDiagnostic(){
-        return isDiagnosticPassed();
-
+    @Override
+    public boolean passDiagnostics() {
+        System.out.println("Грузовой автомобиль "+getBrand()+", "+getModel()+" прошел диагностику");
+        return true;
     }
 }
