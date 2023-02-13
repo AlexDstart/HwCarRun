@@ -17,9 +17,9 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
-    public boolean isDiagnosticPassed() {
+    public void isDiagnosticPassed() {
         System.out.println("Автобусы диагностику не проходят");
-        return false;
+
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
-    public boolean passDiagnostics() throws TransportTypeException {
-        throw new TransportTypeException("Автобусам диагностику проходить не нужно");
+    public void diagnoseVehicle() throws TransportTypeException {
+        throw new TransportTypeException("Автобусам не нужна диагностика");
     }
 }

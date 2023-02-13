@@ -14,10 +14,11 @@ public class Mechanics {
         this.company = company;
     }
 
-    public void diagnoseVenicle(Transport transport) throws TransportTypeException {
-        transport.passDiagnostics();
-
+    public void doDiagnostic(Transport transport) throws TransportTypeException {
+        transport.diagnoseVehicle();
     }
+
+
     public void repairCar(Transport transport) {
         System.out.println("починить машину " + transport);
     }
@@ -40,9 +41,6 @@ public class Mechanics {
 
     @Override
     public String toString() {
-        return "Mechanics{" +
-                "name='" + name + '\'' +
-                ", company='" + company + '\'' +
-                '}';
+        return name + '\'' + company + '\'';
     }
 }

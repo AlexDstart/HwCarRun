@@ -19,8 +19,7 @@ public class Truck extends Transport<DriverC>{
     }
 
     @Override
-    public boolean isDiagnosticPassed() {
-        return false;
+    public void isDiagnosticPassed() {
     }
 
     @Override
@@ -48,8 +47,8 @@ public class Truck extends Transport<DriverC>{
     }
 
     @Override
-    public boolean passDiagnostics() {
-        System.out.println("Грузовой автомобиль "+getBrand()+", "+getModel()+" прошел диагностику");
-        return true;
+    public void diagnoseVehicle() {
+        System.out.println("Проводим диагностику грузовика " + getBrand() + " " + getModel());
     }
+
 }

@@ -1,10 +1,16 @@
 package Transport;
 
+import Transport.servicies.Mechanics;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport<T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private  double engineVolume;
     private T driver;
+    private List<Mechanics> person;
 
     public Transport(String brand,
                      String model,
@@ -19,6 +25,7 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.model=model;
         setEngineVolume(engineVolume);
         setDriver(driver);
+        this.person = new ArrayList<>();
 
 
 
@@ -29,6 +36,14 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public String getModel(){
         return model;}
+
+    public List<Mechanics> getPerson() {
+        return person;
+    }
+
+    public void setPerson(Mechanics mechanic) {
+        this.person.add(mechanic);
+    }
 
     public double getEngineVolume() {
         return engineVolume;
@@ -53,9 +68,9 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void starMove();
     public abstract void finishMove();
 
-    public abstract boolean isDiagnosticPassed();
+    public abstract void isDiagnosticPassed();
 
-    public abstract boolean passDiagnostics()throws TransportTypeException;
+    public void diagnoseVehicle() throws TransportTypeException {};
 
 
 
