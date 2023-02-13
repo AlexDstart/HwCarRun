@@ -1,0 +1,48 @@
+package Transport.servicies;
+
+
+import Transport.Transport;
+import Transport.TransportTypeException;
+
+public class Mechanics {
+
+    private String name;
+    private String company;
+
+    public Mechanics(String name, String company) {
+        this.name = name;
+        this.company = company;
+    }
+
+    public void diagnoseVenicle(Transport transport) throws TransportTypeException {
+        transport.passDiagnostics();
+
+    }
+    public void repairCar(Transport transport) {
+        System.out.println("починить машину " + transport);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return "Mechanics{" +
+                "name='" + name + '\'' +
+                ", company='" + company + '\'' +
+                '}';
+    }
+}

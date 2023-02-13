@@ -1,5 +1,8 @@
 import Transport.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
 
@@ -50,6 +53,10 @@ public class Main {
             printInfo(cars[i]);
             printInfo(trucks[i]);
         }
+        List<Transport> transport = new ArrayList<>();
+        transport.add(cars[0]);
+        transport.add(cars[1]);
+        System.out.println(transport);
 
     }
 
