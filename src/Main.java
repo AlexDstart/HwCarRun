@@ -2,10 +2,7 @@ import Transport.*;
 import Transport.servicies.Mechanics;
 import Transport.servicies.ServiceStation;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -27,6 +24,24 @@ public class Main {
         driversD[1] = new DriverD("ФИО10 ", true, 26);
         driversD[2] = new DriverD("ФИО11 ", true, 18);
         driversD[3] = new DriverD("ФИО12 ", true, 34);
+////
+        System.out.println( " тут должно быть верным  ");
+        Set<Driver> drivers = new HashSet<>();
+        drivers.add(driversB[0]);
+        drivers.add(driversC[0]);
+        drivers.add(driversD[0]);
+        System.out.println(drivers);
+        drivers.add(driversB[0]);
+        if (drivers.contains(driversB)) {
+            System.out.println("Водитель --" + drivers + "");
+        }
+        Iterator<Driver> driverIterator = drivers.iterator();
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
+
+            System.out.println("теперь все");
+            /////
+        }
 
         Mechanics mechanic1 = new Mechanics("Алексей", "Company1");
         Mechanics mechanic2 = new Mechanics("Геннадий", "Company2");
@@ -188,6 +203,7 @@ public class Main {
                 transportAndMechanics.entrySet()) {
             System.out.println("Автомобиль " + vehicle.getKey() + " - Механик(и) " + vehicle.getValue());
         }
+
 
 
 
